@@ -5,6 +5,8 @@
 # - How to set up a game window
 # - How the event loop works
 # - How to handle the QUIT event
+# Practice log: reviewed basic pygame window setup
+
 
 import pygame
 
