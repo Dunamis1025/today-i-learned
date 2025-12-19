@@ -27,4 +27,28 @@ Topics covered include:
 - Basic game loop structure
 
 ## 📂 Folder Structure
+python/
+└── pygame_basic/
+├── 0_game_template.py
+├── 1_create_frame.py
+├── 2_background.py
+├── 3_main_sprite.py
+├── 4_keyboard_event.py
+├── 5_frame_per_second.py
+├── 6_collision.py
+└── 7_text.py
+
+
+## 🙏 Credits
+
+- Tutorial source: **Nado Coding (나도코딩)**  
+  https://www.youtube.com/@nadocoding
+
+This repository is for **educational purposes only**.
+
+## 🚀 Notes
+
+- Each file represents one concept
+- Comments are written in English for practice
+- Code is intentionally kept simple and readable
 
