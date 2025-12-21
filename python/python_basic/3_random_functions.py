@@ -1,5 +1,4 @@
 # Random Functions
-
 from random import *
 
 # print(random())            # Generate a random float between 0.0 and 1.0
