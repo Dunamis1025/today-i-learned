@@ -18,6 +18,7 @@ from random import *
 # print(randrange(1, 46))  # Generates a random number from 1 to 45
 # print(randint(1, 45))    # Generates a random number from 1 to 45 (inclusive)
 
+
 # Practice
 from random import *
 
