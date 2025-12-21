@@ -1,5 +1,6 @@
 # Basic coding practice
 
+
 # Variables
 animal = "dog"
 name = "Yeontan"
