@@ -1,5 +1,6 @@
 📌 Python String Formatting Examples
 
+
 This repository demonstrates four common ways to format strings in Python:
 
 1. % formatting (old style)
