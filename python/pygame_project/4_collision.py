@@ -16,6 +16,7 @@ pygame.display.set_caption("Nado Pang")  # game title
 clock = pygame.time.Clock()
 #################################################################
 
+
 # 1. Game setup (background, images, positions, speed, fonts, etc.)
 current_path = os.path.dirname(__file__)  # get current file location
 image_path = os.path.join(current_path, "images")  # images folder path
