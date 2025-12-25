@@ -1,15 +1,19 @@
-🐍 Python Basics
+# Python Basics
 
-The python_basic folder contains simple Python examples such as:
+This folder contains basic Python practice files created while following
+the "Nado Coding (나도코딩)" YouTube tutorials.
 
-Variables and data types
+## Purpose
+- Practice Python fundamentals
+- Understand basic syntax and logic
+- Get comfortable with writing small scripts
 
-Conditional statements
+## Topics Covered
+- Variables and data types
+- Conditional statements
+- Loops (`while`, `for`)
+- User input and output
+- Simple control flow
 
-Loops (while, for)
-
-User input handling
-
-Basic logic and control flow
-
-Each file focuses on one small concept.
+⚠️ All code is for learning purposes only.  
+All original content and teaching materials belong to **Nado Coding**.
