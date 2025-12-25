@@ -1,54 +1,42 @@
 # Today I Learned (TIL)
 
 This repository is a personal learning log where I upload small, daily code examples
-to practice GitHub commits and improve my programming fundamentals.
+while studying Python fundamentals, Pygame, and GUI programming.
 
-## 📌 Purpose
+The main purpose of this repository is:
+- to practice consistent GitHub commits
+- to review and reinforce programming basics
+- to keep a clear, structured record of what I have learned
 
-- Practice making small, consistent commits on GitHub
-- Learn Python and Pygame basics step by step
-- Keep a clear record of what I learned each day
+---
 
-## 🎮 Pygame Basics
+## 📌 Important Notice (Copyright & Usage)
 
-The `pygame_basic` folder contains Python files created while following
-the **"Nado Coding (나도코딩)" YouTube tutorial**.
+⚠️ **All code in this repository is written by following the tutorials from the YouTube channel “Nado Coding (나도코딩)”.**
 
-These files are not original projects, but **learning exercises**
-typed and understood line by line.
+- These are **learning exercises**, not original projects
+- The code was typed line by line for practice and understanding
+- **All intellectual property and original ideas belong to Nado Coding**
+- This repository is for **personal study and educational purposes only**
 
-Topics covered include:
-- Creating a game window
-- Drawing backgrounds and sprites
-- Keyboard input handling
-- Frame rate (FPS) control
-- Collision detection using `Rect`
-- Text rendering and timers
-- Basic game loop structure
+---
 
 ## 📂 Folder Structure
+
+```text
 python/
-└── pygame_basic/
-├── 0_game_template.py
-├── 1_create_frame.py
-├── 2_background.py
-├── 3_main_sprite.py
-├── 4_keyboard_event.py
-├── 5_frame_per_second.py
-├── 6_collision.py
-└── 7_text.py
-
-
-## 🙏 Credits
-
-- Tutorial source: **Nado Coding (나도코딩)**  
-  https://www.youtube.com/@nadocoding
-
-This repository is for **educational purposes only**.
-
-## 🚀 Notes
-
-- Each file represents one concept
-- Comments are written in English for practice
-- Code is intentionally kept simple and readable
+├── python_basic/
+│   └── Basic Python syntax, loops, conditions, functions, input/output
+│
+├── pygame_basic/
+│   └── Step-by-step Pygame fundamentals from tutorial lessons
+│
+├── pygame_project/
+│   └── Small practice games built by following tutorial guidance
+│
+├── gui_basic/
+│   └── Tkinter GUI basics (windows, widgets, layout, events)
+│
+└── gui_project/   (planned)
+    └── Simple GUI applications based on tutorial content
 
