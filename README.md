@@ -21,22 +21,29 @@ The main purpose of this repository is:
 
 ---
 
-## 📂 Folder Structure
-
-```text
-python/
-├── python_basic/
-│   └── Basic Python syntax, loops, conditions, functions, input/output
+today-i-learned/
+├── 01_python/
+│   ├── 01_python_basic/
+│   │   ├── Basic Python syntax
+│   │   ├── Variables, operators, and control flow
+│   │   ├── Strings, lists, dictionaries, tuples, and sets
+│   │   ├── Random functions and small quiz-style exercises
+│   │
+│   ├── 02_pygame/
+│   │   ├── 01_pygame_basic/
+│   │   │   └── Step-by-step Pygame fundamentals from tutorial lessons
+│   │   │      (window setup, sprites, movement, collisions, timers)
+│   │   │
+│   │   └── 02_pygame_project/
+│   │       └── Small practice games built by following tutorial guidance
+│   │
+│   └── 03_gui/
+│       ├── 01_gui_basic/
+│       │   └── Tkinter GUI basics
+│       │      (widgets, layout managers, message boxes, listboxes, scrollbars)
+│       │
+│       └── 02_gui_project/
+│           └── Simple GUI applications based on tutorial content (planned)
 │
-├── pygame_basic/
-│   └── Step-by-step Pygame fundamentals from tutorial lessons
-│
-├── pygame_project/
-│   └── Small practice games built by following tutorial guidance
-│
-├── gui_basic/
-│   └── Tkinter GUI basics (windows, widgets, layout, events)
-│
-└── gui_project/   (planned)
-    └── Simple GUI applications based on tutorial content
+└── README.md
 
