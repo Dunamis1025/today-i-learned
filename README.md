@@ -21,7 +21,7 @@ The main purpose of this repository is:
 
 ---
 ## 📂 Folder Structure (Updated)
-
+'''
 today-i-learned/
 ├── 01_python/
 │ ├── 01_python_basic/
@@ -47,3 +47,4 @@ today-i-learned/
 │ └── Simple GUI applications based on tutorial content (planned)
 │
 └── README.md
+'''
