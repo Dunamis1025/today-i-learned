@@ -8,22 +8,19 @@ from PIL import Image
 # ==================================================
 # About ttk (Themed Tkinter)
 # ==================================================
-# ttk is an enhanced version of tkinter widgets.
-# It provides a modern, native-looking UI that adapts
-# automatically to the operating system's theme.
+# ttk is a themed version of tkinter widgets.
+# It provides a more modern and native-looking UI
+# that automatically matches the operating system style.
 #
 # Common ttk widgets used in this project:
-# - Combobox    : dropdown selection widget
-# - Progressbar : visual indicator of task progress
+# - Combobox     : dropdown selection widget
+# - Progressbar  : visual indicator of task progress
 
 # ==================================================
 # Main Window Setup
 # ==================================================
 
-# Create the main Tkinter window (entry point of the GUI app)
 root = Tk()
-
-# Title displayed on the window title bar
 root.title("Nado GUI")
 
 # ==================================================
@@ -32,51 +29,35 @@ root.title("Nado GUI")
 
 def add_file():
     """
-    Open a file selection dialog that allows the user
+    Open a file selection dialog and allow the user
     to select multiple image files at once.
-    Selected file paths are added to the Listbox.
+    The selected file paths are added to the Listbox.
     """
-
     files = filedialog.askopenfilenames(
         title="Select image files",
-        filetypes=(
-            ("PNG files", "*.png"),
-            ("All files", "*.*")
-        ),
-        # Default directory when the dialog opens
+        filetypes=(("PNG files", "*.png"), ("All files", "*.*")),
         initialdir=r"C:\Users\yunho\OneDrive\Desktop\today_i_learned\today-i-learned"
     )
 
-    # Listbox.insert() accepts only one item at a time,
-    # so we insert each file path individually
     for file in files:
         list_file.insert(END, file)
 
-
 def del_file():
     """
-    Remove selected items from the Listbox.
+    Delete selected items from the Listbox.
     """
-
-    # curselection() returns selected indices as a tuple.
-    # Deleting from the end prevents index shifting issues.
     for index in reversed(list_file.curselection()):
         list_file.delete(index)
-
 
 def browse_dest_path():
     """
     Open a directory selection dialog and
     set the selected folder as the destination path.
     """
-
     folder_selected = filedialog.askdirectory()
-
-    # If the user clicks Cancel, an empty string is returned
     if folder_selected == "":
         return
 
-    # Clear existing text and insert the selected path
     txt_dest_path.delete(0, END)
     txt_dest_path.insert(0, folder_selected)
 
@@ -87,32 +68,22 @@ def browse_dest_path():
 def merge_image():
     """
     Merge selected images vertically into a single image.
-    User-defined Width, Spacing, and Format options
-    are applied before saving the result.
+    Apply Width / Spacing / Format options and save the result.
     """
 
     # ---------------------------
-    # Width option handling
+    # Read options from comboboxes
     # ---------------------------
 
+    # Width
     img_width = cmb_width.get()
-
-    # Use -1 as a sentinel value to indicate
-    # that the original image width should be preserved
     if img_width == "Original":
-        img_width = -1
+        img_width = -1  # sentinel value: keep original width
     else:
-        # Combobox values are returned as strings,
-        # so conversion to int is required for calculations
-        img_width = int(img_width)
+        img_width = int(img_width)  # combobox returns string
 
-    # ---------------------------
-    # Spacing option handling
-    # ---------------------------
-
+    # Spacing
     img_space = cmb_space.get()
-
-    # Convert spacing labels into actual pixel values
     if img_space == "Small":
         img_space = 30
     elif img_space == "Medium":
@@ -122,97 +93,62 @@ def merge_image():
     else:  # None
         img_space = 0
 
-    # ---------------------------
-    # Format option handling
-    # ---------------------------
-
-    # Convert format string to lowercase for compatibility
-    # with PIL.Image.save() conventions (e.g., "jpg", "png")
-    img_format = cmb_format.get().lower()
+    # Format
+    img_format = cmb_format.get().lower()  # "JPG" -> "jpg"
 
     # ---------------------------
     # Load images
     # ---------------------------
-
-    # Retrieve all file paths from the Listbox and open them
-    images = [Image.open(x) for x in list_file.get(0, END)]
+    img_paths = list_file.get(0, END)
+    images = [Image.open(x) for x in img_paths]
 
     # ---------------------------
-    # Calculate image sizes
+    # Resize images (keep aspect ratio)
     # ---------------------------
-
-    image_sizes = []
+    resized_images = []
 
     if img_width > -1:
-        # Maintain aspect ratio using proportional scaling:
-        # new_height = (new_width * original_height) / original_width
-        #
-        # int() is required because image dimensions
-        # must be integer values
-        image_sizes = [
-            (int(img_width), int(img_width * x.size[1] / x.size[0]))
-            for x in images
-        ]
+        for img in images:
+            # new_height = (new_width * original_height) / original_width
+            new_height = int(img_width * img.size[1] / img.size[0])
+            resized_images.append(img.resize((img_width, new_height)))
     else:
-        # Use original image dimensions
-        image_sizes = [(x.size[0], x.size[1]) for x in images]
+        resized_images = images  # keep originals
 
-    # Unpack (width, height) tuples into separate sequences
-    widths, heights = zip(*image_sizes)
-
-    # Final image dimensions
+    # ---------------------------
+    # Calculate final canvas size
+    # ---------------------------
+    widths, heights = zip(*(img.size for img in resized_images))
     max_width = max(widths)
-    total_height = sum(heights) + img_space * (len(images) - 1)
+    total_height = sum(heights) + img_space * (len(resized_images) - 1)
+
+    result_img = Image.new("RGB", (max_width, total_height), (255, 255, 255))
 
     # ---------------------------
-    # Create result canvas
+    # Paste images + progress
     # ---------------------------
-
-    # Create a blank white canvas in RGB mode
-    result_img = Image.new(
-        "RGB",
-        (max_width, total_height),
-        (255, 255, 255)
-    )
-
     y_offset = 0
-
-    # ---------------------------
-    # Paste images & update progress
-    # ---------------------------
-
-    for idx, img in enumerate(images):
+    for idx, img in enumerate(resized_images):
         result_img.paste(img, (0, y_offset))
         y_offset += img.size[1] + img_space
 
-        # Calculate and update progress percentage
-        progress = (idx + 1) / len(images) * 100
+        progress = (idx + 1) / len(resized_images) * 100
         p_var.set(progress)
         progress_bar.update()
 
     # ---------------------------
-    # Save final image
+    # Save output
     # ---------------------------
-
-    dest_path = os.path.join(
-        txt_dest_path.get(),
-        f"nado_photo.{img_format}"
-    )
-
+    dest_path = os.path.join(txt_dest_path.get(), f"nado_photo.{img_format}")
     result_img.save(dest_path)
 
     msgbox.showinfo("Notice", "Image merging completed successfully.")
 
-# ==================================================
-# Start Button Logic
-# ==================================================
-
 def start():
     """
     Triggered when the Start button is clicked.
-    Validates inputs before starting the merge process.
+    Validate inputs and start merging.
     """
-
     if list_file.size() == 0:
         msgbox.showwarning("Warning", "Please add at least one image file.")
         return
@@ -222,3 +158,102 @@ def start():
         return
 
     merge_image()
+
+# ==================================================
+# File Control Buttons Frame
+# ==================================================
+
+file_frame = Frame(root)
+file_frame.pack(fill="x", padx=5, pady=5)
+
+btn_add_file = Button(file_frame, text="Add File", width=12, command=add_file)
+btn_add_file.pack(side="left")
+
+btn_del_file = Button(file_frame, text="Delete Selected", width=12, command=del_file)
+btn_del_file.pack(side="right")
+
+# ==================================================
+# File List Frame (Listbox + Scrollbar)
+# ==================================================
+
+list_frame = Frame(root)
+list_frame.pack(fill="both", padx=5, pady=5)
+
+scrollbar = Scrollbar(list_frame)
+scrollbar.pack(side="right", fill="y")
+
+list_file = Listbox(
+    list_frame,
+    selectmode="extended",
+    height=15,
+    yscrollcommand=scrollbar.set
+)
+list_file.pack(side="left", fill="both", expand=True)
+
+scrollbar.config(command=list_file.yview)
+
+# ==================================================
+# Destination Path Frame
+# ==================================================
+
+path_frame = LabelFrame(root, text="Destination Path")
+path_frame.pack(fill="x", padx=5, pady=5)
+
+txt_dest_path = Entry(path_frame)
+txt_dest_path.pack(side="left", fill="x", expand=True, padx=5)
+
+btn_dest_path = Button(path_frame, text="Browse", width=10, command=browse_dest_path)
+btn_dest_path.pack(side="right", padx=5)
+
+# ==================================================
+# Options Frame
+# ==================================================
+
+frame_option = LabelFrame(root, text="Options")
+frame_option.pack(padx=5, pady=5)
+
+Label(frame_option, text="Width", width=8).pack(side="left")
+cmb_width = ttk.Combobox(frame_option, state="readonly", values=["Original", "1024", "800", "640"], width=10)
+cmb_width.current(0)
+cmb_width.pack(side="left")
+
+Label(frame_option, text="Spacing", width=8).pack(side="left")
+cmb_space = ttk.Combobox(frame_option, state="readonly", values=["None", "Small", "Medium", "Large"], width=10)
+cmb_space.current(0)
+cmb_space.pack(side="left")
+
+Label(frame_option, text="Format", width=8).pack(side="left")
+cmb_format = ttk.Combobox(frame_option, state="readonly", values=["PNG", "JPG", "BMP"], width=10)
+cmb_format.current(0)
+cmb_format.pack(side="left")
+
+# ==================================================
+# Progress Bar Frame
+# ==================================================
+
+frame_progress = LabelFrame(root, text="Progress")
+frame_progress.pack(fill="x", padx=5, pady=5)
+
+p_var = DoubleVar()
+progress_bar = ttk.Progressbar(frame_progress, maximum=100, variable=p_var)
+progress_bar.pack(fill="x", padx=5, pady=5)
+
+# ==================================================
+# Run / Close Buttons Frame
+# ==================================================
+
+frame_run = Frame(root)
+frame_run.pack(fill="x", padx=5, pady=5)
+
+btn_close = Button(frame_run, text="Close", width=12, command=root.quit)
+btn_close.pack(side="right")
+
+btn_start = Button(frame_run, text="Start", width=12, command=start)
+btn_start.pack(side="right")
+
+# ==================================================
+# Window Settings
+# ==================================================
+
+root.resizable(False, False)
+root.mainloop()
