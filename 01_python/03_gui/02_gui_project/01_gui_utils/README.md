@@ -1,21 +1,50 @@
-# Auto Screenshot Generator
+# GUI Utilities (01_gui_utils)
 
-A small standalone Python utility that automatically captures
-full-screen screenshots at fixed time intervals.
+This folder contains small preparation scripts created  
+before building the full Tkinter image merge GUI application.
 
-## What this script does
-- Waits for a short preparation time
-- Captures the entire screen every 2 seconds
-- Saves screenshots as sequential image files
-  (`image1.png` ~ `image10.png`)
+Rather than jumping directly into a complex GUI,
+each script here isolates and explains one core concept
+that will later be reused inside the main project.
 
-## Why Pillow is used
-This script uses **Pillow**, the modern fork of the Python Imaging Library (PIL).
-Pillow provides the `ImageGrab` module, which allows screen capture
-directly from Python.
+Together, these utilities form the foundation
+for image generation, data handling, and layout logic.
 
-## Installation
-This project uses a virtual environment to isolate dependencies.
+---
 
-```bash
-pip install pillow
+## What this folder prepares
+
+### 1. Generating sample image data
+
+The script `01_auto_screenshot.py` is used to automatically
+generate image files by capturing full-screen screenshots
+at fixed time intervals.
+
+This removes the need for external image assets
+and allows quick, repeatable testing.
+
+**Key ideas**
+- Automated data generation
+- Sequential file naming (`image1.png` ~ `image10.png`)
+- Using Pillow (`ImageGrab`) for screen capture
+
+---
+
+### 2. Pairing and unpacking image metadata
+
+The script `02_zip_and_unzip_image_metadata.py` demonstrates
+how image-related data can be paired and unpacked
+using Python’s `zip()` and unpacking syntax.
+
+This mirrors how the image merge GUI later handles:
+- File paths
+- Image widths
+- Image heights
+- Layout positions
+
+**Example concept**
+```python
+filenames = ["image1.png", "image2.png", "image3.png"]
+heights = [300, 420, 280]
+
+list(zip(filenames, heights))
