@@ -4,6 +4,7 @@ This folder contains fundamental Tkinter GUI examples created while learning Pyt
 
 Each file focuses on one specific concept or widget, making it easy to understand, test, and review individual behaviors without project-level complexity.
 
+
 🎯 Purpose of This Folder
 
 The goal of 01_gui_basic is to:
@@ -18,7 +19,10 @@ Build a strong foundation before moving to a full GUI project
 
 All examples are intentionally small, focused, and isolated.
 
+
+
 📂 What You Will Find Here
+
 
 🧱 Basic Window & Layout
 
@@ -33,6 +37,7 @@ pack
 grid
 
 Understanding how widgets are positioned and resized
+
 
 🧩 Core Widgets
 
@@ -52,6 +57,7 @@ How to read values from it
 
 How it reacts to user interaction
 
+
 🎛 Widget State & User Input
 
 Handling widget states (normal, disabled, readonly)
@@ -61,6 +67,7 @@ Retrieving user input
 Updating widget content dynamically
 
 Understanding selection and focus behavior
+
 
 📊 Progress & Feedback
 
@@ -76,6 +83,7 @@ showwarning
 
 showerror
 
+
 🖼 Result Screenshots
 
 Many examples include result screenshots (*_result.png) to visually confirm:
@@ -85,6 +93,7 @@ How the GUI looks
 Whether the widget behaves as expected
 
 This makes the folder useful even without running the code.
+
 
 🧠 How to Use This Folder
 
@@ -102,11 +111,10 @@ Modify values to see how behavior changes
 
 These examples are ideal for quick refresh and reference.
 
+
 🔗 Next Step
 
-After completing this folder, move on to:
-
-➡ 02_gui_project
+After completing this folder, move on to: ➡ 02_gui_project
 
 There, all these basic concepts are combined into a complete Tkinter GUI application, including:
 
@@ -119,6 +127,7 @@ Progress tracking
 Option handling
 
 Exception handling
+
 
 📌 Notes
 
