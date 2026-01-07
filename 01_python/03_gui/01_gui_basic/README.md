@@ -19,6 +19,7 @@ Build a strong foundation before moving to a full GUI project
 All examples are intentionally small, focused, and isolated.
 
 📂 What You Will Find Here
+
 🧱 Basic Window & Layout
 
 Creating application windows
