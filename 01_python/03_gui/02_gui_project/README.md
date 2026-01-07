@@ -1,38 +1,142 @@
-# Image Merge GUI Project (Tkinter)
+Image Merge GUI Project (Tkinter)
 
-## 📘 Project Description
-This project is a Tkinter-based GUI application that merges multiple images into a single output image.
+This folder contains a complete Tkinter-based GUI project that merges multiple images into a single output image.
 
-It is built step by step following a GUI design and feature specification example.
+The project is built step by step, applying and extending concepts learned in 01_gui_basic, and gradually evolving into a stable, user-friendly GUI application.
 
----
+🎯 Project Goal
 
-## 🧑‍💻 User Scenario
-1. The user selects one or more images to merge.
-2. The user specifies the destination folder.
-3. The user sets width, spacing, and format options.
-4. The user merges images by clicking the Start button.
-5. The user exits the program by clicking the Close button.
+The goal of this project is to:
 
----
+Apply Tkinter basics in a real, functional application
 
-## ⚙️ Feature Specification
-- Add Files: Add selected image files to the list box
-- Remove Selection: Remove selected files from the list box
-- Browse: Select destination folder
-- Width: Original / 1024 / 800 / 640
-- Spacing: None / Narrow / Normal / Wide
-- Format: PNG / JPG / BMP
-- Start: Execute image merging
-- Progress: Display progress per file
-- Close: Exit the program
+Design a user-friendly GUI workflow
 
----
+Handle user input safely and predictably
 
-## 🗂 Project Structure
-```text
-02_gui_project/
- ├─ 01_tkinter_file_merge_layout.py
- ├─ 01_tkinter_file_merge_layout_result.png
- ├─ 02_tkinter_file_list_gui_layout.py
- ├─ 02_tkinter_file_list_gui_layout_result.png
+Practice refactoring and incremental feature development
+
+Learn how small GUI concepts connect into a full project
+
+🧩 Project Overview
+
+This application allows the user to:
+
+Select multiple image files
+
+Choose an output destination folder
+
+Configure merge options:
+
+Output width
+
+Spacing between images
+
+Output image format
+
+Track progress visually
+
+Handle invalid input and runtime errors safely
+
+The final output is a single merged image saved to the selected directory.
+
+🛠 Features Implemented
+📁 File Handling
+
+Multi-file image selection
+
+Listbox-based file management
+
+Destination folder selection
+
+⚙️ Merge Options
+
+Width
+
+Keep original width or resize while maintaining aspect ratio
+
+Spacing
+
+None / Small / Medium / Large
+
+Format
+
+PNG / JPG / BMP
+
+📊 Progress Tracking
+
+Real-time progress bar updates during merge
+
+Visual feedback for long-running operations
+
+🚨 Exception Handling
+
+Prevents crashes on invalid destination paths
+
+Displays clear error messages using messagebox
+
+Improves overall application stability
+
+🧱 Development Flow
+
+This project was developed incrementally:
+
+Basic GUI layout
+
+File selection and list management
+
+Image merging logic
+
+Progress bar integration
+
+Option handling (width, spacing, format)
+
+Refactoring for readability and safety
+
+Exception handling for real user input scenarios
+
+Each step is preserved as a separate file to clearly show the learning and evolution process.
+
+🖼 Result Screenshots
+
+The folder includes result screenshots that demonstrate:
+
+Successful image merging
+
+Correct application of options
+
+Working progress bar behavior
+
+Completed output notifications
+
+These screenshots serve as both visual verification and documentation.
+
+🔗 Relationship to Other Folders
+
+01_gui_basic
+→ Focuses on isolated Tkinter concepts and widgets
+
+02_gui_project
+→ Combines those concepts into a complete GUI application
+
+Together, they represent a full learning path from basics to application.
+
+📌 Notes
+
+All code is written for learning purposes
+
+The project structure reflects real-world GUI development patterns
+
+This folder demonstrates how to move from examples to an actual usable tool
+
+🚀 Next Steps
+
+Possible future improvements:
+
+Drag-and-drop file support
+
+Horizontal merge option
+
+Output file name customization
+
+Image preview inside the GUI
