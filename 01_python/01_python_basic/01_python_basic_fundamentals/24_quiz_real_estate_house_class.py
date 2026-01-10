@@ -81,3 +81,10 @@ print(f"Total {len(houses)} property listings available.")
 # Print details of each listing
 for house in houses:
     house.show_detail()
+
+
+Total 3 property listings available.
+Gangnam, Seoul Apartment For Sale $800,000 2015
+Brooklyn, New York Condo For Rent $3,200/month 2012
+Sydney CBD Studio For Rent $550/week 2008
+
