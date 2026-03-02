@@ -130,12 +130,4 @@ If no IP address assigned → likely Network layer issue.
 
 ---
 
-## 6. 30-Second Speak Version (For Class)
-
-“The OSI model is a 7-layer framework used to understand how network communication works. 
-Each layer has a specific responsibility, from physical signal transmission at Layer 1 to application services at Layer 7. 
-It helps engineers troubleshoot issues by identifying which layer the problem belongs to.”
-
----
-
 Note: These notes were written after reviewing learning materials and reorganised in my own words for understanding and revision purposes.
