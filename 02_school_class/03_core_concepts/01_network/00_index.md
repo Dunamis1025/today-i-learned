@@ -14,7 +14,7 @@ The purpose of this section is to strengthen foundational knowledge for:
 ## 📂 Network
 
 - [OSI Model](01_osi_model.md)
-- [TCP/IP Model](network/tcp_ip_model.md)
+- [TCP/IP Model](02_tcp_ip_model.md)
 - [TCP vs UDP](network/tcp_vs_udp.md)
 - [IP Addressing](network/ip_addressing.md)
 - [Subnetting Basics](network/subnetting_basics.md)
