@@ -17,7 +17,7 @@ The purpose of this section is to strengthen foundational knowledge for:
 - [TCP/IP Model](02_tcp_ip_model.md)
 - [TCP vs UDP](03_tcp_vs_udp.md)
 - [IP Addressing](04_ip_addressing.md)
-- [Subnetting Basics](network/subnetting_basics.md)
+- [Subnetting Basics](05_subnetting_basics.md)
 
 ---
 
