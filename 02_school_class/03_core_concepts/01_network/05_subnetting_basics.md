@@ -308,4 +308,38 @@ Key concepts include:
 
 Subnetting improves network management, performance, security, and efficient IP address allocation.
 
+## Quick Mental Method for Subnetting
+
+A simple way to understand subnetting is to remember how many addresses each prefix provides.
+
+| CIDR | Addresses per subnet |
+|-----|---------------------|
+| /24 | 256 |
+| /25 | 128 |
+| /26 | 64 |
+| /27 | 32 |
+| /28 | 16 |
+
+Example:
+
+192.168.1.0 /24
+
+If we divide it into /25 networks:
+
+192.168.1.0 – 192.168.1.127  
+192.168.1.128 – 192.168.1.255  
+
+Each subnet contains **128 addresses**.
+
+If we divide it into /26 networks:
+
+192.168.1.0 – 192.168.1.63  
+192.168.1.64 – 192.168.1.127  
+192.168.1.128 – 192.168.1.191  
+192.168.1.192 – 192.168.1.255  
+
+Each subnet contains **64 addresses**.
+
+This method makes it easier to quickly calculate subnet ranges during exams or network design.
+
 Understanding subnetting is a fundamental skill for networking and cybersecurity professionals.
