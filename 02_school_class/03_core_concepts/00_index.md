@@ -23,9 +23,9 @@ The purpose of this section is to strengthen foundational knowledge for:
 
 ## 📂 Security
 
-- [Ransomware](security/ransomware.md)
-- [DDoS](security/ddos.md)
-- [Phishing](security/phishing.md)
+- [Ransomware](01_ransomware.md)
+- [DDoS](02_ddos.md)
+- [Phishing](03_phishing.md)
 - [CIA Triad](security/cia_triad.md)
 
 ---
