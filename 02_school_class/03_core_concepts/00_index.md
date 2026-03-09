@@ -11,7 +11,7 @@ The purpose of this section is to strengthen foundational knowledge for:
 
 ---
 
-## 📂 Network
+## 📡 Network
 
 - [OSI Model](01_network/01_osi_model.md)
 - [TCP/IP Model](01_network/02_tcp_ip_model.md)
@@ -34,7 +34,7 @@ The purpose of this section is to strengthen foundational knowledge for:
 
 ---
 
-## 📂 Protocols
+## 🌐 Protocols
 
 - [DNS](protocols/dns.md)
 - [DHCP](protocols/dhcp.md)
