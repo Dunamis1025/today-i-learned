@@ -21,12 +21,16 @@ The purpose of this section is to strengthen foundational knowledge for:
 
 ---
 
-## 📂 Security
+## 🔐 Security
 
+- [CIA Triad](02_security/cia_triad.md)
 - [Ransomware](02_security/01_ransomware.md)
 - [DDoS](02_security/02_ddos.md)
 - [Phishing](02_security/03_phishing.md)
-- [CIA Triad](security/cia_triad.md)
+- [Social Engineering](02_security/04_social_engineering.md)
+- [Malware](02_security/05_malware.md)
+- [Botnet](02_security/06_botnet.md)
+- [Man-in-the-Middle (MITM)](02_security/07_mitm.md)
 
 ---
 
