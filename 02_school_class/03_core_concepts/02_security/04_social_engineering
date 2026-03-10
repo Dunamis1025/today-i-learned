@@ -1,0 +1,198 @@
+# Social Engineering
+
+## 1. What is Social Engineering?
+
+Social Engineering is a cyber attack technique that targets **human psychology** instead of computer systems.
+
+Instead of hacking software or networks directly, attackers manipulate people into revealing confidential information.
+
+In simple terms:
+
+Social Engineering = **Hacking humans instead of hacking computers**
+
+Attackers trick victims into doing things such as:
+
+- Revealing passwords
+- Clicking malicious links
+- Opening infected attachments
+- Sending money
+- Giving access to secure systems
+
+Because humans are often the weakest part of security, social engineering is very effective.
+
+---
+
+## 2. Why Social Engineering Works
+
+Even strong security systems can fail if people are tricked.
+
+Social engineering works because attackers take advantage of common human traits such as:
+
+- Trust
+- Fear
+- Curiosity
+- Urgency
+- Respect for authority
+- Desire to help others
+
+For example:
+
+An attacker might pretend to be an **IT support staff** and ask an employee for their password.
+
+The employee may give the password because they trust the authority.
+
+---
+
+## 3. Common Types of Social Engineering Attacks
+
+### 3.1 Phishing
+
+Phishing is one of the most common social engineering attacks.
+
+Attackers send fake emails pretending to be legitimate organizations such as:
+
+- Banks
+- PayPal
+- Government agencies
+- Online services
+
+The email usually asks the victim to:
+
+- Click a link
+- Enter login details
+- Download a file
+
+These links often lead to **fake websites** that steal credentials.
+
+Example:
+
+"Your account has been suspended. Please login immediately to verify your identity."
+
+---
+
+### 3.2 Spear Phishing
+
+Spear phishing is a **targeted phishing attack**.
+
+Instead of sending emails to many people, attackers target a specific individual or organization.
+
+They may collect information from:
+
+- LinkedIn
+- Social media
+- Company websites
+
+This makes the email appear more believable.
+
+Example:
+
+An email that mentions your **manager’s name** or **company project**.
+
+---
+
+### 3.3 Pretexting
+
+Pretexting is when an attacker creates a **fake story** to obtain information.
+
+The attacker pretends to be someone trustworthy such as:
+
+- IT technician
+- Bank employee
+- Police officer
+- Company manager
+
+Example:
+
+"Hi, this is the IT department. We are fixing a system issue. Can you confirm your password?"
+
+---
+
+### 3.4 Baiting
+
+Baiting uses **curiosity or temptation** to trick victims.
+
+Example:
+
+An attacker leaves a USB drive labeled:
+
+"Salary Data 2025"
+
+If someone plugs it into their computer, malware may automatically install.
+
+---
+
+### 3.5 Tailgating
+
+Tailgating is a **physical social engineering attack**.
+
+An attacker follows an authorized employee into a restricted building or office.
+
+Example:
+
+"Hey, I forgot my access card. Can you hold the door?"
+
+---
+
+## 4. Real World Example
+
+One famous social engineering case is the **Twitter Hack (2020)**.
+
+Attackers used social engineering to trick Twitter employees into giving access to internal tools.
+
+As a result, attackers took control of many high-profile accounts including:
+
+- Elon Musk
+- Bill Gates
+- Barack Obama
+
+They used these accounts to promote a cryptocurrency scam.
+
+This attack showed that **human manipulation can bypass even large companies' security systems.**
+
+---
+
+## 5. How to Prevent Social Engineering
+
+Organizations and individuals can reduce risk by following good security practices.
+
+### Security Awareness Training
+
+Employees should learn how social engineering works.
+
+Training helps people recognize suspicious messages and requests.
+
+### Verify Identity
+
+Always verify requests before sharing sensitive information.
+
+Example:
+
+If someone claims to be from IT support, contact the IT department directly.
+
+### Do Not Click Suspicious Links
+
+Never click unknown links in emails or messages.
+
+Check the sender carefully.
+
+### Use Multi-Factor Authentication (MFA)
+
+Even if attackers steal a password, MFA can prevent account access.
+
+### Be Careful with Personal Information
+
+Attackers often collect information from social media.
+
+Avoid sharing too much personal or company information online.
+
+---
+
+## 6. Key Takeaway
+
+Technology alone cannot stop cyber attacks.
+
+Human awareness is a critical part of cybersecurity.
+
+Understanding social engineering helps individuals recognize manipulation attempts and protect sensitive information.
+
+In cybersecurity, **people are often the first line of defense.**
