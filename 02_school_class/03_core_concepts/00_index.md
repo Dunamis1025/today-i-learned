@@ -34,6 +34,14 @@ The purpose of this section is to strengthen foundational knowledge for:
 
 ---
 
+## 🕸️ Web Security
+
+- [SQL Injection](03_web_security/01_sql_injection.md)
+- [Cross-Site Scripting (XSS)](03_web_security/02_xss.md)
+- [Password Attacks](03_web_security/03_password_attacks.md)
+
+---
+
 ## 🌐 Protocols
 
 - [DNS](protocols/dns.md)
@@ -41,4 +49,3 @@ The purpose of this section is to strengthen foundational knowledge for:
 - [HTTP / HTTPS](protocols/http_https.md)
 
 ---
-
