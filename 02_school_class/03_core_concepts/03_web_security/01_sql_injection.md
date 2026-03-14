@@ -1,23 +1,60 @@
 # SQL Injection (SQLi) Deep Dive
 
-## 1. Executive Summary
-**SQL Injection (SQLi)** is a critical web security vulnerability that allows an attacker to interfere with the queries that an application makes to its database. By injecting malicious SQL code into input fields, attackers can bypass authentication, access sensitive data, and in some scenarios, gain administrative control over the database server.
-
-
+## 1. What is SQL Injection?
+**SQL Injection (SQLi)** is a web security vulnerability that allows an attacker to interfere with the queries that an application makes to its database. It typically occurs when an attacker inputs malicious SQL code into an input field, which is then executed by the server.
 
 ---
 
-## 2. Technical Attack Mechanism
-The vulnerability occurs when user-supplied data (from forms, cookies, or HTTP headers) is concatenated directly into a database query string without proper sanitization or parameterization.
+## 2. How it Works
+When an application uses unvalidated user input directly in a SQL query, an attacker can change the query's logic.
 
-### The "Logic Hijacking" Example
-Consider a standard login query:
-```sql
-SELECT * FROM accounts WHERE user = '$username' AND pass = '$password';
-If an attacker inputs admin as the username and ' OR '1'='1 as the password, the resulting query becomes:SQLSELECT * FROM accounts WHERE user = 'admin' AND pass = '' OR '1'='1';
-Since '1'='1' is a tautology (always true), the WHERE clause evaluates to true regardless of the password, granting unauthorized access.3. Comprehensive Taxonomy of SQLiA. In-band SQLi (Classic)The attacker uses the same communication channel to both launch the attack and gather results.Union-Based: Leverages the UNION SQL operator to combine the results of the original query with a new query injected by the attacker. This allows for the extraction of data from any table in the database.Error-Based: The attacker intentionally triggers database errors to gain information about the database structure (e.g., table names, column types) from the error messages returned to the client.B. Inferential SQLi (Blind SQLi)No data is transferred via the web application directly. Instead, the attacker reconstructs the database structure by sending payloads and observing the server's response patterns.Boolean-Based: The attacker sends a query that asks the database a true/false question. Based on whether the page content changes or remains the same, the attacker can deduce data bit by bit.Time-Based: The attacker injects a command that tells the database to wait (e.g., SLEEP(10)) before responding if a condition is true. If the response is delayed, the attacker confirms the condition.C. Out-of-band SQLiUsed when the server is hardened against standard responses, but the database can make external network requests (like DNS or HTTP). The attacker triggers the database to send data to a server they control.4. Mitigation and Defense-in-Depth✅ Primary Defense: Prepared Statements (Parameterized Queries)This is the most effective defense. The application defines the SQL code first, then passes user inputs as parameters. The database treats these strictly as data, never as executable code.Example (Java/JDBC):JavaString customerName = request.getParameter("customerName");
-// The '?' acts as a placeholder that cannot be escaped
-PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM users WHERE name = ?");
-pstmt.setString(1, customerName); 
-ResultSet results = pstmt.executeQuery();
-✅ Secondary Defense: Input Validation (Allow-listing)Implement strict validation for all user input. Use "Allow-lists" to define exactly what is permitted (e.g., a zip code should only accept 5 digits) rather than "Block-lists" which try to guess what is malicious.✅ Database Security: Principle of Least Privilege (PoLP)The web application’s database account should only have the minimum permissions required. For example, an application that only reads data should not have DROP TABLE or GRANT permissions.✅ Use of WAF (Web Application Firewall)A WAF can help detect and block known SQLi patterns in incoming traffic as an additional perimeter layer.5. Summary ComparisonFeatureIn-band SQLiBlind SQLiOut-of-band SQLiSpeedFastSlow (Iterative)ModerateVisibilityHigh (Direct results)Low (Inferred)None (External)ComplexityLowHighHighThis document is part of a personal cybersecurity study series. Last updated: March 2026.
+**Example (Vulnerable Code):**
+`SELECT * FROM users WHERE username = 'admin' AND password = '`**`' OR '1'='1`**`';`
+
+In this case, because `'1'='1'` is always true, the attacker can log in without a valid password.
+
+---
+
+## 3. Types of SQL Injection
+
+### ① In-band SQLi (Classic)
+The attacker uses the same communication channel to launch the attack and gather results.
+* **Error-based:** Forcing the database to produce error messages that reveal structural information.
+* **Union-based:** Using the `UNION` operator to combine results from multiple tables and exfiltrate data.
+
+### ② Inferential SQLi (Blind SQLi)
+The server doesn't return data directly. The attacker observes the server's response patterns to reconstruct the database structure.
+* **Boolean-based:** Checking if the page content changes based on a TRUE/FALSE query result.
+* **Time-based:** Making the database wait for a specified duration if a condition is true to confirm data existence.
+
+### ③ Out-of-band SQLi
+Used when the attacker cannot use the same channel to launch the attack and gather results, relying on the database's ability to make external HTTP or DNS requests.
+
+---
+
+## 4. Impact of SQL Injection
+* **Data Theft:** Stealing sensitive data like passwords, credit card numbers, or personal info.
+* **Data Manipulation:** Modifying or deleting database records without authorization.
+* **Authentication Bypass:** Gaining access as administrative users without credentials.
+* **Remote Code Execution:** In some cases, gaining full control over the underlying database server.
+
+---
+
+## 5. How to Prevent SQL Injection
+
+### ✅ Prepared Statements (Parameterized Queries)
+This is the most effective defense. Instead of building a query string with user input, parameters are sent separately so the database treats them as data, not code.
+
+### ✅ Input Validation & Sanitization
+Never trust user input. Use allow-lists to permit only expected characters or formats (e.g., numeric-only for ID fields).
+
+### ✅ Principle of Least Privilege (PoLP)
+The database account used by the web application should only have the minimum permissions it absolutely needs.
+
+### ✅ Use of ORM/Frameworks
+Modern frameworks (like Django, Hibernate, or Entity Framework) often have built-in protection against SQLi.
+
+---
+
+## Summary
+SQL Injection is a critical vulnerability where malicious SQL queries are executed. To protect your application, **always use Prepared Statements** and strictly validate all user-supplied data.
