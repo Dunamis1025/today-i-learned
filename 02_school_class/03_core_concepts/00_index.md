@@ -44,7 +44,7 @@ The purpose of this section is to strengthen foundational knowledge for:
 
 ## 🌐 Protocols
 
-- [DNS](01_dns.md)
+- [DNS](04_protocols/01_dns.md)
 - [DHCP](protocols/dhcp.md)
 - [HTTP / HTTPS](protocols/http_https.md)
 
