@@ -18,12 +18,15 @@ The purpose of this section is to strengthen foundational knowledge for:
 - [TCP vs UDP](01_network/03_tcp_udp.md)
 - [IP Addressing](01_network/04_ip_addressing.md)
 - [Subnetting Basics](01_network/05_subnetting.md)
+- [Firewall Basics](01_network/06_firewall.md)
+- [VPN Concepts](01_network/07_vpn.md)
+- [Wireshark Basics](01_network/08_wireshark.md)
 
 ---
 
 ## 🔐 Security
 
-- [CIA Triad](02_security/cia_triad.md)
+- [CIA Triad](02_security/00_cia_triad.md)
 - [Ransomware](02_security/01_ransomware.md)
 - [DDoS](02_security/02_ddos.md)
 - [Phishing](02_security/03_phishing.md)
@@ -45,7 +48,23 @@ The purpose of this section is to strengthen foundational knowledge for:
 ## 🌐 Protocols
 
 - [DNS](04_protocols/01_dns.md)
-- [DHCP](protocols/dhcp.md)
-- [HTTP / HTTPS](protocols/http_https.md)
+- [DHCP](04_protocols/02_dhcp.md)
+- [HTTP / HTTPS](04_protocols/03_http_https.md)
+
+---
+
+## 🐧 Linux / CLI
+
+- [Basic Commands](05_linux/01_basic_commands.md)
+- [File Permissions](05_linux/02_file_permissions.md)
+- [Network Commands](05_linux/03_network_commands.md)
+
+---
+
+## 🔍 Penetration Testing
+
+- [Methodology](06_pentesting/01_methodology.md)
+- [Recon Tools](06_pentesting/02_recon_tools.md)
+- [Lab Write-ups](06_pentesting/03_lab_writeups.md)
 
 ---
