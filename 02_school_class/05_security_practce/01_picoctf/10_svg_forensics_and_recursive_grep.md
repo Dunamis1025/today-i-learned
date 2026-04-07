@@ -144,21 +144,5 @@ During analysis, multiple fake flags may appear:
 
 ---
 
-## Commit Message
 
-```
-Add SVG forensics and recursive grep search notes (picoCTF)
-```
 
----
-
-## Extended Description
-
-```
-This commit documents key techniques learned from picoCTF challenges:
-- Analyzing SVG files as XML to extract hidden flags
-- Using grep for recursive string search across large directories
-- Identifying decoy flags and understanding challenge patterns
-
-Includes practical commands, workflow, and key insights for future reference.
-```
