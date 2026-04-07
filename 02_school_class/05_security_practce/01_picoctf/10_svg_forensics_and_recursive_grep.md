@@ -1,6 +1,4 @@
-# 10_SVG_Forensics_and_Recursive_Search.md
 
-# 10. SVG Forensics & Recursive String Search (picoCTF)
 
 ---
 
