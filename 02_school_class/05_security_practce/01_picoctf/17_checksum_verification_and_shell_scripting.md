@@ -22,9 +22,10 @@ The power of Linux comes from combining small tools to perform complex tasks:
 
 ## 3. Technical Workflow
 1. **Identify the Target Hash:** Read the provided `checksum.txt`.
-2. **Scan and Filter:** ```bash
+2. **Scan and Filter:**
+   ```
    sha256sum files/* | grep fba9f49bf22aa7188a155768ab0dfdc1f9b86c47976cd0f7c9003af2e20598f7
-
+     ```
 
 ## 4. Identify File: The output reveals the specific filename associated with the hash (e.g., files/87590c24).
 
