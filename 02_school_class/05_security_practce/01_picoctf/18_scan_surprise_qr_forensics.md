@@ -16,13 +16,13 @@
 ### 1. File Acquisition
 First, I downloaded the challenge file using `wget`:
 ```bash
-wget <challenge_url>
+$ wget <challenge_url>
 ```
 
 ### 2. Exploring the Directory with ls -F
 After downloading, I used the -F flag to identify the file types clearly:
 ```bash
-ls -F
+$ ls -F
 ```
 What is ls -F? It appends a character to each file name to indicate its type:
 
@@ -37,14 +37,14 @@ No symbol for regular files (like our .png or .txt)
 ### 3. Extracting and Locating the Image
 Initially, I tried to scan the .zip file directly, which failed because the QR code was inside the archive. I extracted the files:
 ```bash
-unzip challenge.zip
+$ unzip challenge.zip
 ```
 This provided a file named flag.png (or a similar path like drop-in/flag.png).
 
 ### 4. Decoding the QR Code
 Using zbar-tools, I decoded the image file to retrieve the text:
 ```bash
-zbarimg flag.png
+$ zbarimg flag.png
 ```
 The tool scanned the image and output the flag hidden within the QR data.
 
