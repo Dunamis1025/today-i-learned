@@ -28,8 +28,10 @@ The power of Linux comes from combining small tools to perform complex tasks:
 
 ## 4. Identify File: The output reveals the specific filename associated with the hash (e.g., files/87590c24).
 
+```
 Decrypt: ```bash
 ./decrypt.sh files/87590c24
+```
 
 
 ## 5. Conceptual Analogy: "The Matrix Potato"
