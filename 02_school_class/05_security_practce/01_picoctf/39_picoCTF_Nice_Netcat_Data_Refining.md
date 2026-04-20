@@ -30,35 +30,36 @@ python3 -c "n='[YOUR_DECIMAL_LIST]'; print(''.join([chr(int(i)) for i in n.split
 ```
 Code Breakdown:
 
-python3 -c: Executes the provided string as a Python command without creating a .py file.
+- python3 -c: Executes the provided string as a Python command without creating a .py file.
 
-;: Separates multiple Python statements on a single line.
+- ;: Separates multiple Python statements on a single line.
 
-n.split(): Splits the raw string into a list of individual numeric strings, ignoring newlines or carriage returns.
+- n.split(): Splits the raw string into a list of individual numeric strings, ignoring newlines or carriage returns.
 
-int(i): Converts each string (e.g., '112') into an integer.
+- int(i): Converts each string (e.g., '112') into an integer.
 
-chr(): Converts the integer back into its corresponding ASCII character (e.g., 112 -> 'p').
+- chr(): Converts the integer back into its corresponding ASCII character (e.g., 112 -> 'p').
 
-''.join(...): Merges the list of individual characters into one continuous string.
+- ''.join(...): Merges the list of individual characters into one continuous string.
+
 
 Approach 2: CyberChef (Data Refining)
 While using CyberChef's "From Decimal" module, we encountered issues due to hidden CR (Carriage Return) characters.
 
-Problem: Hidden \r symbols attached to the numbers caused the conversion to fail.
+- Problem: Hidden \r symbols attached to the numbers caused the conversion to fail.
 
-Solution:
+- Solution:
 
-Use the Find / Replace module with REGEX enabled to find \r and replace it with nothing.
+1. Use the Find / Replace module with REGEX enabled to find \r and replace it with nothing.
 
-Alternatively, use Remove whitespace to clean the data before conversion.
+2. Alternatively, use Remove whitespace to clean the data before conversion.
 
 ## 4. Key Takeaways & Lessons Learned
-The Power of Netcat: Learned how to interact with remote services and receive raw data streams.
+1. The Power of Netcat: Learned how to interact with remote services and receive raw data streams.
 
-Data Cleansing: Realized that invisible control characters (CR/LF) can break data processing tools. Learning to "clean" data using REGEX or Python is a vital skill in cybersecurity.
+2. Data Cleansing: Realized that invisible control characters (CR/LF) can break data processing tools. Learning to "clean" data using REGEX or Python is a vital skill in cybersecurity.
 
-ASCII Representation: Reconfirmed that everything in computing is fundamentally numeric; understanding how characters are mapped (Decimal, Hex, Binary) is crucial for CTF challenges.
+3. ASCII Representation: Reconfirmed that everything in computing is fundamentally numeric; understanding how characters are mapped (Decimal, Hex, Binary) is crucial for CTF challenges.
 
 ## 5. Final Flag
 picoCTF{g00d_k1tty!_n1c3_k1tty!_d5d88}
