@@ -45,5 +45,5 @@ Pattern Recognition: Identifying padding characters like = is crucial for determ
 
 Tool Versatility: Both GUI tools like CyberChef and CLI commands like base64 -d are essential parts of a cybersecurity professional's toolkit.
 
-6. Captured Flag
+## 6. Captured Flag
 picoCTF{base64_n3st3d_dic0d!n8_d0wnl04d3d_de523f49}
