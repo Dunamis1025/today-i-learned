@@ -260,6 +260,89 @@ sudo apt update && sudo apt full-upgrade -y
 
 ---
 
+## Command Breakdown: What Each Command Actually Does
+
+### `cat /etc/os-release`
+- `cat` = "show me the contents of this file" (short for concatenate)
+- `/etc/os-release` = a file that stores OS version information
+- Linux uses `/` to separate folder paths (like `\` in Windows)
+- **Think of it as:** opening a text file that contains the OS version info
+
+### `uname -r`
+- `uname` = "give me system information"
+- `-r` = "specifically, the kernel version"
+- The **kernel** is the core engine of the operating system
+- **Think of it as:** checking what engine version your OS is running
+
+### `sudo apt update && sudo apt full-upgrade -y`
+This is actually multiple commands combined:
+
+| Part | Meaning |
+|------|---------|
+| `sudo` | Run as administrator (like "Run as Administrator" in Windows) |
+| `apt` | The package manager — like an App Store for Linux |
+| `update` | Fetch the latest list of available updates (does NOT install anything yet) |
+| `&&` | "If the previous command succeeds, run the next one" |
+| `full-upgrade` | Actually install all available upgrades |
+| `-y` | Automatically answer "yes" to any prompts during installation |
+
+- **Think of it as:** opening the App Store, refreshing the update list, then installing everything
+
+### `sudo nano /etc/apt/sources.list`
+- `nano` = a simple text editor in the terminal (like Notepad in Windows)
+- `/etc/apt/sources.list` = the file that stores the URLs where apt downloads packages from
+- **How to save in nano:** `Ctrl+X` → `Y` → `Enter`
+- **Think of it as:** opening Notepad to edit a config file
+
+### `sudo sed -i 's|http://http.kali.org|https://http.kali.org|g' /etc/apt/sources.list`
+- `sed` = stream editor — used for **find and replace** (like Ctrl+H in Word)
+- `-i` = edit the file in place (without this, it only shows the result on screen)
+- `'s|old|new|g'` = the find/replace pattern:
+  - `s` = substitute
+  - first part = what to find
+  - second part = what to replace with
+  - `g` = global (replace ALL occurrences, not just the first one)
+- **Think of it as:** using Find & Replace on a file from the command line
+- **Why used instead of nano:** nano edits weren't saving correctly — `sed` forces the change directly
+
+### `ping 8.8.8.8`
+- `ping` = sends a signal to a server and waits for a response
+- `8.8.8.8` = Google's DNS server IP address (almost always online, great for testing)
+- If you get responses → internet is working ✅
+- If you get "Destination Host Unreachable" → internet is NOT working ❌
+- Stop with `Ctrl+C`
+- **Think of it as:** texting someone "hey, you there?" to check if they're reachable
+
+### `ip addr show`
+- `ip` = network configuration tool
+- `addr` = address
+- `show` = display
+- Shows all network interfaces and their assigned IP addresses
+- **Think of it as:** checking what "phone numbers" (IP addresses) your computer has
+
+### `ip route show`
+- `route` = the path/gateway used to reach the internet
+- Shows the routing table — which gateway the system uses to send traffic
+- **Think of it as:** checking which "exit door" your computer uses to reach the internet
+
+### `sudo ip route del default`
+- `del` = delete
+- `default` = the default route (the main exit door to the internet)
+- Removes the currently set default gateway
+- **Think of it as:** removing the wrong exit door address from memory
+
+### `sudo ip route add default via 192.168.29.2`
+- `add` = add a new route
+- `default` = set this as the main route
+- `via 192.168.29.2` = use this IP as the gateway
+- **Think of it as:** telling your computer "use THIS door to get to the internet"
+
+### `sudo reboot`
+- `reboot` = restart the system immediately
+- **Think of it as:** clicking Start → Restart in Windows
+
+---
+
 ## Notes
 
 - VMware NAT gateway IP can be found at:
