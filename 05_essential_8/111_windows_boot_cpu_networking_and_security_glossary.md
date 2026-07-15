@@ -155,12 +155,4 @@
 
 ---
 
-## Fun Tangent: Company Name Origins & Ownership (Australia)
 
-- **Optus** — Latin *optus* = "chosen/decided" (same root as English "opt"); wholly owned by **Singtel** (Singapore), itself majority-owned by **Temasek Holdings** (Singapore government investment arm).
-- **Telstra** — name blend of "**Tel**ecom" + "Au**stra**lia"; fully privatized, publicly traded on the ASX (genuinely Australian-owned, not foreign).
-- **Vodafone** (Australia) — global brand name = "**Vo**ice" + "**Da**ta" + Tele"**fone**"; the Australian operation is run by **TPG Telecom** (Australian company) under license, following the 2020 merger of Vodafone Hutchison Australia and TPG.
-- **Woolworths, Coles** — genuinely Australian-owned supermarket chains.
-- **Holden** — defunct (GM ceased Australian operations/production in 2020).
-- **ALDI** — German-owned (Aldi Süd).
-- **IGA** — brand originated in the **US** (Independent Grocers Alliance); Australian IGA stores are supplied/run via **Metcash**, an Australian company, under franchise.
